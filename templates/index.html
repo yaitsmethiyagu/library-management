@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>My Library</h1>
+
+{% if all_books == [] %}
+    <h3> No data in library </h3>
+{% else %}
+<!--    {% for book in all_books %}-->
+<!--    <ul>-->
+<!--        <li>{{ book["Book_name"] }}, {{ book["Book_author"] }} , {{ book["rating"] }}</li>-->
+<!--    </ul>-->
+<!--    {% endfor %}-->
+
+
+        {% for books in all_books %}
+            <ul>
+                <li>{{ books.book }}, {{ books.author }} , {{ books.rating }}</li>
+            </ul>
+        {% endfor %}
+{% endif %}
+    
+<a href="{{ url_for('add')}}">Add New Book</a>
+</body>
+</html>
